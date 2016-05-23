@@ -4,4 +4,10 @@ RUN apt-get update && apt-get install sphinxsearch -y && apt-get clean
 
 EXPOSE 9312
 
-CMD searchd
+RUN mkdir -p /var/sphinx
+
+WORKDIR /var/sphinx
+
+COPY start.sh .
+
+CMD ["bash", "/var/sphinx/start.sh"]
