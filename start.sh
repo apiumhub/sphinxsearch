@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-searchd --console
-indexer --rotate --all
+indexer --rotate --all "$@"
+searchd --nodetach "$@"
